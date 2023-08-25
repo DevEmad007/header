@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <header>
-        <a href="./index.html">
-            <img style="height: 55px;margin-top:5px;" src="./logo.png" alt="website logo">
-        </a>
+        <a class="logo" href="./index.html"> My Logo </a>
+        <div class="menuToggle"></div>
         <nav>
-            <ul id="nav_list">
+            <ul class="navList">
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -24,10 +24,64 @@
                     <a href="#">Blogs</a>
                 </li>
                 <li>
+                    <a href="#">Dropdown <b>▶</b></a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">product 3</a>
+                        </li>
+                        <li>
+                            <a href="#">product 2</a>
+                        </li>
+                        <li>
+                            <a href="#">product 1<b>+</b></a>
+                            <ul class="subDropdown">
+                                <li>
+                                    <a href="">sub Drop 1</a>
+                                </li>
+                                <li>
+                                    <a href="">sub Drop 2</a>
+                                </li>
+                                <li>
+                                    <a href="">sub Drop 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Dropdown <b>▶</b></a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="#">post 4</a>
+                        </li>
+                        <li>
+                            <a href="#">post 2</a>
+                        </li>
+                        <li>
+                            <a href="#">post 3</a>
+                        </li>
+                        <li>
+                            <a href="#">post 1</a><b>+</b>
+                            <ul class="subDropdown">
+                                <li>
+                                    <a href="">sub Drop 1</a>
+                                </li>
+                                <li>
+                                    <a href="">sub Drop 2</a>
+                                </li>
+                                <li>
+                                    <a href="">sub Drop 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#">Gigs</a>
                 </li>
             </ul>
         </nav>
     </header>
 </body>
+
 </html>
