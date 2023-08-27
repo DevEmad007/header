@@ -1,161 +1,131 @@
+@import url(https://db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    font-family: "AdihausDIN";
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+:root {
+    --bg-color : #ECEFF1;
+    --header-height:80px;
+    --header-notice : 40px;
 }
 
 body {
-    min-height: 100vh;
-    background-color: #36474f;
+    background-color: var(--bg-color);
+}
+
+.headerNotice {
+    height: 40px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: none;
+}
+
+.addidasLogo {
+    position: absolute;
+    top: calc(var(--header-notice) + 12px);
+    left: 30px;
+    height: 66px;
 }
 
 header {
-    position: absolute;
-    width: 100%;
-    min-height: 66px;
-    background: rgb(0, 204, 231);
-    padding: 0 25px;
+    background-color: white;
+    padding: 0 45px 0 25px;
+    height: var(--header-height);
+}
+
+.navContainer{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.additionalLinks {
+    display: flex;
     align-items: center;
+    justify-content: flex-end;
+    font-size: 12px;
 }
 
-header .logo {
-    color: white;
-    font-size: 1.75em;
-    font-weight: 600;
-    text-decoration: none;
+.additionalLinks li {
+    padding: 8px 12px;
 }
 
-.navList {
-    position: relative;
+nav {
+    display: flex;
+}
+
+.navList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 50px;
+    font-size: clamp(8px,13px,13px);
+    line-height: 1.2;
+    letter-spacing: 2px;
 }
 
 .navList li {
-    position: relative;
-    list-style: none;
-    float: left;
+    margin: 16px 14px;
 }
 
-.navList li a {
-    color: white;
-    font-size:1.1rem ;
-    text-decoration: none;
-    padding: 20px 25px;
+.navList B {
+    font-weight: 800;
+}
+
+.shopNav {
     display: flex;
-    justify-content: space-between;
+    justify-content: baseline;
+    align-items: center;
 }
 
-.navList a:hover {
-    background-color: rgba(1, 191, 216, 0.795);
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 0 10px 0 14px;
+    margin-bottom: 8px;
 }
 
-.dropdown {
-    position: absolute;
-    left: 0;
-    width: 150px;
-    display: none;
+.inputContainer input {
+    background-color: var(--bg-color);
+    border: none;
+    padding: 6px 3px;
+    
 }
 
-.navList li:hover > .dropdown {
-    display: block;
+.inputContainer input::placeholder{
+    color: black;
 }
 
-.dropdown li {
+.shopNavList {
+    display: flex ;
+}
+
+.shopNavList li {
+    margin: 10px ;
+}
+
+.cartCount {
+    font-size: 12px;
+    background-color: rgb(255, 230, 0);
+    border-radius: 50%;
     position: relative;
-    width: 100%;
-    border: 1px solid #2427290e;
-}
-
-.subDropdown {
-    position: absolute;
-    top: 0;
-    left: 150px;
-}
-
-.subDropdown li {
-    width: 150px;
-}
-
-.subDropdown li:hover > .subDropdown {
-    display: block;
-}
-@media (max-width:850px) {
-    header{
-        padding: 10px 20px;
-    }
-    
-    nav{
-        transition: 0.3s;
-        position: absolute;
-        width: 100%;
-        top: 66px;
-        left: 0;
-        background-color: rgb(71, 72, 73);
-        display: none;
-    }
-    
-    .navList li {
-        width: 100%;  
-    }
-    
-    .dropdown {
-        position: relative;
-        width: 100%;
-        left: 0;
-        top: 0;
-        transition: 0.3s;
-    }
-    
-    .subDropdown {
-        position: relative;
-        top: 0;
-        left: 0px;
-    }
-
-    .menuToggle {
-        position: relative;
-        width: 40px;
-        height: 50px;
-        cursor: pointer;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .menuToggle::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        transform: translateY(-12px);
-        box-shadow: 0 12px 0 #fff;
-        transition: .5s;
-    }
-    
-    .menuToggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        transform: translateY(12px);
-        transition: .5s;
-    }
-
-    header.active .menuToggle::after {
-        transform: rotate(315deg);
-    }
-
-    header.active .menuToggle::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-    }
-
-    .showNav {
-        display: block;
-    }
+    bottom: 50%;
+    right: 20%;
+    font-weight: 600;
 }
