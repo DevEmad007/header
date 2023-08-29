@@ -1,10 +1,11 @@
-@import url(https://db.onlinewebfonts.com/c/c0cd6ec8ce6d2bbd315a13b62ed13550?family=AdihausDIN);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "AdihausDIN";
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     text-decoration: none;
     list-style: none;
     color: black;
@@ -13,333 +14,141 @@
 :root {
     --bg-color : #ECEFF1;
     --header-height:80px;
-    --header-notice : 40px;
 }
 
 body {
-    background-color: white;
+    background-color: var(--bg-color);
 }
 
-.headerContainer {
-    transition: 0.3s;
-}
-
-.headerNotice {
-    height: 40px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-    z-index: 15;
-}
-
-.addidasLogo {
-    position: absolute;
-    top: calc(var(--header-notice) - 16px);
-    left: 40px;
-    width: 60px;
+.websiteLogo {
+    font-weight: 800;
+    font-size: 50px;
 }
 
 header {
-    width: 100%;
-    background-color: white;
-    padding: 0 45px 0 25px;
-    height: var(--header-height);
-    z-index: 15;
     position: fixed;
-    top: var(--header-notice);
+    top: 0;
     left: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-}
-
-header * {
-    z-index: 15;
-}
-
-.hidden {
-    transform: translateY(-150%);
-
- }
-
-.navContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.additionalLinks {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 12px;
-}
-
-.additionalLinks li {
-    padding: 8px 12px;
-}
-
-nav {
-    display: flex;
+    right: 0;
     width: 100%;
-}
-
-.navList {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 58px;
-}
-
-.navList > li {
-    font-size: 14px;
-    letter-spacing: 2.1px;
-}
-
-.navList > li > a {
-    padding: 11px 0.5rem;
-    display: block;
-}
-
-.bold {
-    font-weight:999;
-}
-
-.inputContainer {
-    height: 32px;
-    width: auto;
+    height: var(--header-height);
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-color);
-    margin: 8px;
-    margin-top: 6px;
-    margin-bottom: 10px;
-    min-width: 200px;
+    padding: 0 20px;
+    transition: 0.3s;
 }
 
-.inputContainer > span {
-    margin: 3px;
-}
-
-.inputContainer input {
-    background-color: var(--bg-color);
-    border: none;
-    margin-left: 10px;
-    outline: none;
-}
-
-.inputContainer input::placeholder{
-    color: black;
-    font-size: 14px;
-}
-
-.shopNav {
+.navList {
     display: flex;
-    justify-content: flex-end;
-}
-
-.shopNavList {
-    display: flex;
-    align-items: center;
-    gap: 1.3rem;
-    margin-top: 8px;
-    margin-right: 16px;
-}
-
-.shopNavList > li a {
-    display: inline-block;
-}
-
-.cartCount {
-    font-size: 12px;
-    background-color: rgb(255, 230, 0);
-    border-radius: 50%;
-    position: absolute;
-    
-    font-weight: 600;
-}
-
-@media(min_width:1040px){
-    .inputContainer{
-        min-width: 100px;
-    }
-}
-
-.navList > li:hover {
-    border-bottom: 3px solid black;
-}
-
-.navList li:hover .subMenu{
-    display: block;
-}
-
-.subMenu {
-    position:fixed;
-    top: 120px;
-    left: 0;
-    right: 0;
-    display: none;
-    background-color: white;
-    border: 1px solid #ECEFF1;
-}
-
-.menuCol {
-    float: left;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 40px;
-    width: 190px;
-    letter-spacing: 0;
-}
-
-.menuCol h4 {
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: 900;
-}
-
-.menuCol li {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: left ;
-    margin-bottom: 6px;
-}
-
-.menuCol li a:hover {
-    text-decoration: underline;
-}
-
-.menu-col-1 {
-    border-right: 2px solid #ECEFF1;
-    width: 360px;
-    padding-left:80px ;
-}
-
-.bannerImg {
-    width: 100%;
-}
-
-.bannerTextContainer {
-    position: absolute;
-    top: 260px;
-    left: 50px;
-    width: 496px;
-    color: white;
-    z-index: 10;
-}
-
-.bannerText > h1 {
-    font-size: 38px;
-    font-family: 'AdihausDIN';
-    color: white;
-    margin-bottom: 6px;
-}
-
-.bannerText > p {
-    font-size: 18px;
-    line-height: 24px;
-    color: white;
-    width: 400px;
-}
-
-.bannerLinkContainer div {
-    position: relative;
-    height: 50px;
-    background-color: white;
-    margin: 14px 0;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    line-height: 20px;
-    text-align: center;
-    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-transform:uppercase;
 }
 
-.bannerLinkContainer div::before {
-    content: "";
-    position: absolute;
-    top: 0.09rem;
-    left: 0.07rem;
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgb(247, 243, 243);
-  }
-
-.bannerLinkContainer div a {
-    flex-grow: 1;
-    padding: 12px 0;
-    cursor: pointer;
+.navList li{
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    margin: auto 2rem;
+    color: black;
     z-index: 10;
 }
 
-.bannerLinkContainer div span {
-    font-size: 24px;
-    font-weight: bolder;
-}
-
-
-.linkOne , .linkThree {
-    width: 153px;
-}
-
-.linkTwo {
-    width: 180px;
-}
-
-.noticeAfterBanner {
-    position: relative;
-    width: 100%;
-    height: 330px;
-    text-align: center;
-    color: black;
-    background-color: #EDEDE3;
-    margin-top: -8px;
-}
-.noticeAfterBanner > div {
-    padding-top: 76px;
-}
-
-.noticeAfterBanner div > h2 {
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 25px;
-    letter-spacing: 1.5px;
-    margin-bottom: 18px;
-}
-
-.noticeAfterBanner > div > p {
-    font-size: 18px;
-    margin: 0 auto;
-    max-width: 760px;
-}
-
-.noticeAfterBanner  a {
+.navList a {
     display: block;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    text-decoration: underline;
-    margin: 20px;
+    padding: 6px 15px;
 }
 
-.footwareSection h1{
-    font-size: 40px;
-    font-weight: 900;
-    letter-spacing: -0.2px;
-    margin: 120px 32px;
+.navList a:hover ,
+.navList a.active{
+    border-radius: 25px;
+    color: white;
+    background-color:  black;
+}
+
+.hideHeader {
+    transform: translateY(-100px);
+}
+
+.corrector {
+    margin-top: var(--header-height);
+}
+
+@media(max-width:800px){
+
+    .toggelMenu {
+        position: absolute;
+        top: 36px;
+        right: 20px;
+        width: 34px;
+        height: 3px;
+        background-color: black;
+        border-radius: 3px;
+    }
+
+    .toggelMenu::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 34px;
+        height: 3px;
+        background-color: black;
+        border-radius: 3px;
+        cursor: pointer;
+        transform: translateY(-12px);
+    }
+
+    .toggelMenu::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 34px;
+        height: 3px;
+        background-color: black;
+        border-radius: 3px;
+        transform: translateY(12px);
+    }
+
+    .hideMenu {
+        transform: translateX(100%);
+        
+    }
+
+    .showMenu {
+        transition: 0.3s ease-in;
+    }
+    
+    .navList {
+        position: absolute;
+        top: var(--header-height);
+        right: 0;
+        height: 100vh;
+        width: 75%;
+        display: block;
+        background-color: #ffffff;
+        border: 1px solid #ECEFF1;
+    }
+
+    .navList li{
+        display: flex;
+        position: relative;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 1rem;
+        color: black;
+        z-index: 10;
+    }
+    
+    .navList a {
+        padding: 6px 15px;
+    }
+    
+    .navList a:hover {
+        text-decoration: underline;
+    }
+
 }

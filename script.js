@@ -1,32 +1,38 @@
+// navList.addEventListener('mouseover',() => {
+//     menuOpen = true;
+//     console.log(menuOpen);
+// });
+
+// navList.addEventListener('mouseout',() => {
+//     menuOpen = false;
+//     console.log(menuOpen);
+// });
+
 const header = document.querySelector('header');
-const headerNotice = document.querySelector('.headerNotice');
+const toggelMenu = document.querySelector('.toggelMenu');
 const navList = document.querySelector('.navList');
-let menuOpen = false;
 
-navList.addEventListener('mouseover',() => {
-    menuOpen = true;
-    console.log(menuOpen);
-});
-
-navList.addEventListener('mouseout',() => {
-    menuOpen = false;
-    console.log(menuOpen);
-});
-
-let prevScrollPos = window.scrollY;
-
-const scrollEvent = window.addEventListener('scroll',() => {
-    const currentScrollPos = window.scrollY;
-    if (!menuOpen) {
-        if (prevScrollPos > currentScrollPos) {
-            // Scroll Up: Show the header
-            header.classList.remove('hidden');
-            headerNotice.classList.remove('hidden');
-        } else {
-            // Scroll Down: Hide the header
-            header.classList.add('hidden');
-            headerNotice.classList.add('hidden');
-        }
+toggelMenu.addEventListener('click',() => {
+    if (navList.classList.contains('hideMenu')) {
+        navList.classList.add('showMenu');
+        navList.classList.remove('hideMenu');
     }
-    prevScrollPos = currentScrollPos;
+    else {
+        navList.classList.remove('showMenu');
+        navList.classList.add('hideMenu');
+    }
+});
+
+
+let prevScroll = window.scrollY;
+
+const headarEvent = window.addEventListener('scroll',() => {
+    const currentScrollPos = window.scrollY;
+
+    if (currentScrollPos > prevScroll) {
+        header.classList.add('hideHeader');
+    }
+    else {
+        header.classList.remove('hideHeader');
+    }
 });
