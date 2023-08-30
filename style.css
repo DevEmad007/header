@@ -1,161 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Poppins:wght@200;400;500;600;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
 }
 
 body {
     min-height: 100vh;
-    background-color: #36474f;
+    background-color: rgb(211, 255, 240);
 }
 
-header {
-    position: absolute;
-    width: 100%;
-    min-height: 66px;
-    background: rgb(0, 204, 231);
-    padding: 0 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.websiteLogo {
+    font-family: 'Black Ops One';
+    font-size: 45px;
+    letter-spacing: 1.5px;
 }
 
-header .logo {
-    color: white;
-    font-size: 1.75em;
-    font-weight: 600;
+header * {
     text-decoration: none;
-}
-
-.navList {
-    position: relative;
-}
-
-.navList li {
-    position: relative;
+    text-transform: capitalize;
+    color: rgb(7, 7, 7);
     list-style: none;
-    float: left;
 }
 
-.navList li a {
-    color: white;
-    font-size:1.1rem ;
-    text-decoration: none;
-    padding: 20px 25px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navList a:hover {
-    background-color: rgba(1, 191, 216, 0.795);
-}
-
-.dropdown {
+.toggleMenu {
     position: absolute;
-    left: 0;
-    width: 150px;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 25%;
+    cursor: pointer;
+}
+
+.toggleMenu::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 25%;
+    transform: translateY(-10px);
+}
+
+.toggleMenu::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 25%;
+    transform: translateY(10px);
+}
+
+.showMenu {
     display: none;
 }
 
-.navList li:hover > .dropdown {
-    display: block;
-}
-
-.dropdown li {
-    position: relative;
-    width: 100%;
-    border: 1px solid #2427290e;
-}
-
-.subDropdown {
-    position: absolute;
+header {
+    position: fixed;
     top: 0;
-    left: 150px;
+    left: 0;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
 }
 
-.subDropdown li {
-    width: 150px;
+.navList {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
 }
 
-.subDropdown li:hover > .subDropdown {
+.navList > li a {
+    padding: 10px;
+}
+
+.navList a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.subMenu {
+    background-color: bisque;
+    display: none;
+}
+
+.navList > li:hover .subMenu {
     display: block;
 }
-@media (max-width:850px) {
-    header{
-        padding: 10px 20px;
-    }
-    
-    nav{
-        transition: 0.3s;
-        position: absolute;
-        width: 100%;
-        top: 66px;
-        left: 0;
-        background-color: rgb(71, 72, 73);
+
+.subMenu-2 {
+    display: none;
+}
+
+.subMenu li:last-child:hover .subMenu-2{
+    display: block;
+
+}
+
+@media (min-width:800px) {
+
+    .toggleMenu {
         display: none;
     }
-    
-    .navList li {
-        width: 100%;  
-    }
-    
-    .dropdown {
+        
+    .navList {
         position: relative;
-        width: 100%;
+        top: 0;
         left: 0;
-        top: 0;
-        transition: 0.3s;
-    }
-    
-    .subDropdown {
-        position: relative;
-        top: 0;
-        left: 0px;
-    }
-
-    .menuToggle {
-        position: relative;
-        width: 40px;
-        height: 50px;
-        cursor: pointer;
-        display:flex;
-        justify-content: center;
+        width: fit-content;
+        display: flex;
         align-items: center;
     }
 
-    .menuToggle::before {
-        content: '';
+    .navList a {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .subMenu {
         position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        transform: translateY(-12px);
-        box-shadow: 0 12px 0 #fff;
-        transition: .5s;
+        background-color: bisque;
+        display: none;
     }
     
-    .menuToggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #fff;
-        transform: translateY(12px);
-        transition: .5s;
+    .subMenu > li {
+        position: relative;
     }
 
-    header.active .menuToggle::after {
-        transform: rotate(315deg);
-    }
-
-    header.active .menuToggle::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-    }
-
-    .showNav {
+    .navList > li:hover .subMenu {
         display: block;
+    }
+
+    .subMenu-2 {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        display: none;
+        background-color: bisque;
+    }
+
+    .subMenu li:last-child:hover .subMenu-2{
+        display: block;
+
     }
 }

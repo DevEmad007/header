@@ -1,8 +1,13 @@
-const menuToggle = document.querySelector('.menuToggle');
+const toggleMenu = document.querySelector('.toggleMenu');
 const header = document.querySelector('header');
-const nav = document.querySelector('nav');
+const navList = document.querySelector('.navList');
 
-menuToggle.addEventListener('click',() => {
-    header.classList.toggle('active');
-    nav.classList.toggle('showNav');
+toggleMenu.addEventListener('click',() => {
+    const classList = navList.classList;
+    if (!classList.contains('showMenu')) {
+        classList.add('showMenu');
+    }
+    else {
+        classList.remove('showMenu');
+    }
 });
